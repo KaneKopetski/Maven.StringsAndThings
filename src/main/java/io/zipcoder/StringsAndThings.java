@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author tariq
@@ -37,7 +38,14 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+       String[] arr = base.split(" ");
+       String leftOver = "";
+
+       for (String s : arr) {
+           leftOver = base.replaceAll(remove, "");
+       }
+
+        return leftOver;
     }
 
     /**
@@ -49,7 +57,10 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+        Integer countIs = StringUtils.countMatches(input, "is");
+        Integer countNot = StringUtils.countMatches(input, "not");
+
+       return countIs > countNot;
     }
 
     /**
