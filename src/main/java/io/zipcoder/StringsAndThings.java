@@ -60,7 +60,7 @@ public class StringsAndThings {
         Integer countIs = StringUtils.countMatches(input, "is");
         Integer countNot = StringUtils.countMatches(input, "not");
 
-       return countIs > countNot;
+       return countIs == countNot;
     }
 
     /**
